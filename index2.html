@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device=width, initial-scale=1" />
+    <title>AZoom Electric Car Rental</title>
+    <!--link to css-->
+    <link rel="stylesheet" href="index.css" />
+    <!--box icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+
+  
+    <!-- header-->
+    <header>
+        <a href="index2.html#home" class="logo">
+            <img src="img/logo.jpg" alt="">
+        </a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="index2.html#home">Home</a></li>
+            <li><a href="index2.html#about">About</a></li>
+            <li><a href="index2.html#ride">Rent</a></li>
+            <li><a href="index2.html#services">Cars</a></li>
+            <li><a href="index2.html#reviews">Reviews</a></li>
+            <li><a href="index2.html#locate">Locations</a></li>
+            
+        </ul>
+
+        <div class="header-btn">
+          <a href="return.html" class="return">Return Car</a>
+          <a href="index.html" class="logout">Log Out</a>
+          <a href="#" class="sign-in">Joseph Low</a>
+        </div>
+        
+    </header>
+	
+
+
+    <!-- home-->
+    <section class="home" id="home">
+      <div class="text">
+        <h1><span>Renting Car?</span><br />Choose AZoom</h1>
+        <p>
+          Choose Electric Vehicles, <br/> Reduce Emissions Than Fossil Fuels,<br/> And Keep The Environment Cool with AZoom
+        </p>
+        <div class="app-stores">
+          <img src="img/ios.png" alt="" />
+          <img src="img/playstore.png" alt="" />
+        </div>
+      </div>
+
+    </section>
+	
+	
+	
+    <!--about -->
+    <section class="about" id="about">
+      <div class="heading">
+        <span>About Us</span>
+        <h1>Going <span>Green</span> is staying <span>CLEAN</span></h1>
+      </div>
+      <div class="about-container">
+        <div class="about-img">
+          <img src="img/about.jpg" alt="" />
+        </div>
+        <div class="about-text">
+          <span>AZoom Electric Car Rental</span>
+          <p>
+            AZoom Car Rental specialises in renting electric automobiles to everyone.
+            For our ecologically concerned consumers, we provide an appealing selection of electric vehicles to meet a variety of demands and situations.
+          </p>
+          <p>
+            By driving an EV, you are helping to minimise hazardous air pollution caused by exhaust emissions. 
+            An electric automobile emits no greenhouse gases since it is powered by a battery rather than burning fuel inside. 
+            It also necessitates fewer of the more hazardous, polluting materials, such as engine oil and coolant fluids.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--ride-->
+    <section class="ride" id="ride">
+      <div class="heading">
+        <span>How It Works</span>
+        <h1>Rent With 3 Easy Steps</h1>
+      </div>
+      <div class="ride-container">
+        <div class="box">
+          <i class="bx bxs-map"></i>
+          <h2>Pick A Location</h2>
+          <p>
+            AZoom Car Rental has four branches in Singapore, 
+            and you will be able to pick up the reserved car and return it to a designated car park.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="bx bx-car"></i>
+          <h2>Choose Your Ride</h2>
+          <p>
+            Choose from our selection of electric vehicles for your transportation needs. 
+            We've got you covered for any occasion.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="bx bx-calendar-star"></i>
+          <h2>Reserve To Confirm</h2>
+          <p>
+            After you've decided on a vehicle, you can reserve it for a specific date. 
+            Depending on your needs, the rental period can be daily, weekly, or monthly.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- services-->
+    <section class="services" id="services">
+      <div class="heading">
+        <span>Top Services</span>
+        <h1>
+          Different Cars <br />
+          Different Experience
+        </h1>
+      </div>
+      <div class="services-container">
+        <div class="box">
+          <div class="box-img">
+            <img src="img/nissan.png" alt="" data-car="Nissan LEAF"/>
+          </div>
+          <p>2019</p>
+          <h3>Nissan LEAF</h3>
+          <a href="checkout.html?car=Nissan%20LEAF&carImage=img/nissan.png" class="btn" onclick="rentCar('Nissan LEAF')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/porsche.jpg" alt="" data-car="Porsche Taycan" />
+          </div>
+          <p>2020</p>
+          <h3>Porsche Taycan</h3>
+          <a href="checkout.html?car=Porsche%20Taycan&carImage=img/porsche.jpg" class="btn" onclick="rentCar('Porsche Taycan')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/Mercedes-Benz1.jpg" alt="" data-car="Mercedes-Benz EQS"/>
+          </div>
+          <p>2023</p>
+          <h3>Mercedes-Benz EQS SUV</h3>
+          <a href="checkout.html?car=Mercedes-Benz%20EQS&carImage=img/Mercedes-Benz1.jpg" class="btn" onclick="rentCar('Mercedes-Benz EQS SUV')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/kia.jpg" alt="" data-car="Kia EV6"/>
+          </div>
+          <p>2019</p>
+          <h3>Kia EV6</h3>
+          <a href="checkout.html?car=Kia%20EV6&carImage=img/kia.jpg" class="btn" onclick="rentCar('Kia EV6')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/honda.png" alt="" data-car="Honda E" />
+          </div>
+          <p>2020</p>
+          <h3>Honda E</h3>
+          <a href="checkout.html?car=Honda%20E&carImage=img/honda.png" class="btn" onclick="rentCar('Honda E')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/volvo.png" alt="" />
+          </div>
+          <p>2023</p>
+          <h3>Volvo c40</h3>
+          <a href="checkout.html?car=Volvo%20c40&carImage=img/volvo.png" class="btn" onclick="rentCar('Volvo c40')">Rent Now</a>
+        </div>
+      
+        <div class="box">
+          <div class="box-img">
+            <img src="img/bmw.png" alt="" />
+          </div>
+          <p>2020</p>
+          <h3>BMW iX3 </h3>
+          <a href="checkout.html?car=BMW%20iX3&carImage=img/bmw.png" class="btn" onclick="rentCar('BMW iX3')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/Mercedes-Benz2.png" alt="" />
+          </div>
+          <p>2020</p>
+          <h3>Mercedes-Benz EQV</h3>
+          <a href="checkout.html?car=Mercedes-Benz%20EQV&carImage=img/Mercedes-Benz2.png" class="btn" onclick="rentCar('Mercedes-Benz EQV')">Rent Now</a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/car9.png" alt="" />
+          </div>
+          <p>2023</p>
+          <h3>Lexus RZ</h3>
+          <p>COMING SOON</p>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/car10.png" alt="" />
+          </div>
+          <p>2023</p>
+          <h3>Jaguar I-Pace</h3>
+          <p>COMING SOON</p>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img src="img/car11.png" alt="" />
+          </div>
+          <p>2023</p>
+          <h3>Tesla Model 3</h3>
+          <p>COMING SOON</p>
+        </div>
+        
+        <div class="box">
+          <div class="box-img">
+            <img src="img/car13.png" alt="" />
+          </div>
+          <p>2020</p>
+          <h3>XPeng P7</h3>
+          <p>COMING SOON</p>
+        </div>
+
+      </div>
+    </section>
+	
+	
+  <script>
+  function updateCarName() {
+  
+    const selectedCar = document.getElementById("car").value;
+
+    document.getElementById("carName").textContent = selectedCar;
+  }
+
+  function rentCar(carName) {
+    const carImage = document.querySelector(`[data-car="${carName}"]`);
+    const carImageURL = carImage.getAttribute("src");
+
+
+    const checkoutURL = `checkout.html?car=${carName}&carImage=${carImageURL}`;
+
+    window.location.href = checkoutURL;
+  }
+</script>
+
+     <section class="reviews" id="reviews">
+      <div class="heading">
+        <span>Reviews</span>
+        <h1>Our Customers Experience</h1>
+      </div>
+      <div class="reviews-container">
+        <div class="box">
+          <div class="rev-img">
+            <img src="img/rev1.jpg" alt="" />
+          </div>
+          <h2>Marcus Chong</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+          </div>
+          <p>
+            One of the best car sharing services out there!
+            Helpful and responsive live chat always ready to support its customers when needed. 
+            Vehicles are generally well-maintained and good coverage. 
+            Generous in giving out discounts and promo codes is a plus too! Highly recommended.
+          </p>
+        </div>
+
+        <div class="box">
+          <div class="rev-img">
+            <img src="img/rev2.jpg" alt="" />
+          </div>
+          <h2>Ah Lian</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+          </div>
+          <p>
+            One of the better car sharing platforms I have used.
+            Their customer service is responsive and their staff are always on the ground to understand their users and to improve themselves. 
+            Has a good fleet of high-end vehicles as well!
+          </p>
+        </div>
+
+        <div class="box">
+          <div class="rev-img">
+            <img src="img/rev3.jpg" alt="" />
+          </div>
+          <h2>Dominic Tornado</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            Azoom is one of the best car sharing platform I have used. 
+            Not only prices are reasonable, the customer service is also top notch. 
+            They resolve your booking issues or after trip issues almost instantly. 
+            Highly recommended.
+          </p>
+        </div>
+
+        <div class="box">
+          <div class="rev-img">
+            <img src="img/review4.jpg" alt="" />
+          </div>
+          <h2>Brian O'Coner</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+          </div>
+          <p>
+            This company is my first choice when it comes to car rentals as they offer the lowest rates as compared to the other companies out there. 
+            Team is prompt with resolving issues related to penalties, and is flexible and reasonable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="locate" id="locate">
+      <div class="heading">
+        <h1>Locate Us</h1>
+      </div>
+      <div class="locate-container">
+        <div class="Ubi">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1677.0591657327504!2d103.90085990331245!3d1.3312689031031026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17f0c9582e7d%3A0x73c0b5a7c5d8940e!2sAutomobile%20Megamart!5e0!3m2!1sen!2ssg!4v1698255489853!5m2!1sen!2ssg"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="ubi-text">
+          <span>AZoom Car Rental: Ubi</span>
+          <p>
+            Address: 61 Ubi Ave 2, Singapore 408898 <br />Opening
+            Days:Monday to Sunday, except Public Holidays <br />Opening Hours:
+            9.30am to 8pm <br />Tel: +65 6629 9901
+          </p>
+        </div>
+        <div class="Woodlands">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.2844391464178!2d103.80173144519122!3d1.4339382956194655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1324bfb4caa5%3A0x8d3e81fba8446753!2sWoodlands%2011!5e0!3m2!1sen!2ssg!4v1698256207497!5m2!1sen!2ssg" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+        <div class="woodlands-text">
+          <span>AZoom Car Rental: Woodlands</span>
+          <p>
+            Address: 11 Woodlands Cl, Singapore 737853 <br />Opening
+            Days:Monday to Sunday, except Public Holidays <br />Opening Hours:
+            9.30am to 8pm <br />Tel: +65 6629 9902
+          </p>
+        </div>
+        <div class="Hougang">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1410.208436718231!2d103.88963000149373!3d1.37361016870642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da179af7fe0639%3A0x68990c00a59909da!2sLCH%20CAR%20RENTAL!5e0!3m2!1sen!2ssg!4v1698258287731!5m2!1sen!2ssg" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+        <div class="hougang-text">
+          <span>AZoom Car Rental: Hougang</span>
+          <p>
+            Address: 523 Hougang Ave 6, Block 523, Singapore 530523 <br />Opening
+            Days:Monday to Sunday, except Public Holidays <br />Opening Hours:
+            9.30am to 8pm <br />Tel: +65 6629 9903
+          </p>
+        </div>
+        <div class="Commonwealth">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.3925712734501!2d103.79507409515318!3d1.303941100465103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1ba931609b7b%3A0xb14680fbd89bd885!2sAKA%20Car%20Rental!5e0!3m2!1sen!2ssg!4v1698258743753!5m2!1sen!2ssg" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+        <div class="commonwealth-text">
+          <span>AZoom Car Rental: commonwealth</span>
+          <p>
+            Address: 1 Commonwealth Ln, #02-05 One Commonwealth, Singapore 149544 <br />Opening
+            Days:Monday to Sunday, except Public Holidays <br />Opening Hours:
+            9.30am to 8pm <br />Tel: +65 6629 9904
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-container container">
+        <div class="footer-box">
+          <a href="#" class="logo"><span>AZoom</span></a>
+          <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-box">
+          <h3>Page</h3>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Ride</a>
+          <a href="#">Services</a>
+          <a href="#">Reviews</a>
+        </div>
+        <div class="footer-box">
+          <h3>Legal</h3>
+          <a href="#">Privacy</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <div class="footer-box">
+          <h3>Contact</h3>
+          <a href="index2.html#locate">Ubi</a>
+          <a href="index2.html#locate">Woodlands</a>
+          <a href="index2.html#locate">Hougang</a>
+          <a href="index2.html#locate">Commonwealth</a>
+        </div>
+        <div class="footer-box">
+          <p>&#169; AZoom All Right Reserved</p>
+          </div>
+      </div>
+    </section>
+
+    <!--scrollreveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Link to JS-->
+    <script src="main.js"></script>
+  </body>
+</html>

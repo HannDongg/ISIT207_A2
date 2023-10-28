@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <link rel="stylesheet" href="booking.css"> <!-- Link your CSS file here -->
+    <!-- Include any additional stylesheets or libraries as needed -->
+</head>
+<body>
+
+    <div class="booking-details">
+        <h3 class="booking-heading">Booking Details</h3>
+        <div class="details-container">
+            <div>
+                <h4>Car Name:</h4>
+                <p id="carName"></p>
+            </div>
+
+            <div>
+                <h4>Total Amount:</h4>
+                <p id="totalAmount"></p>
+            </div>
+
+            <div>
+                <h4>Pick-Up Date:</h4>
+                <p id="pickupDate"></p>
+            </div>
+
+            <div>
+                <h4>Location:</h4>
+                <p id="pickupLocation"></p>
+            </div>
+
+            <div>
+                <h4>Rental Duration:</h4>
+                <p id="rentalDuration"></p>
+            </div>
+        </div>
+
+        <div class="return-link"><a href="index2.html">Save Booking Details</a></div>
+    </div>
+
+    <script>
+        // Retrieve data from the URL parameters and populate the details
+        const urlParams = new URLSearchParams(window.location.search);
+        const carName = urlParams.get("carName");
+        const total = urlParams.get("total");
+        const pickup = urlParams.get("pickup");
+        const pickupLocation = urlParams.get("location");
+        const days = parseInt(urlParams.get("days"));
+        const weeks = parseInt(urlParams.get("weeks"));
+        const months = parseInt(urlParams.get("months"));
+
+        const rentalDuration = `${days} days, ${weeks} weeks, ${months} months`;
+
+        // Populate the details on the page
+        document.getElementById("carName").textContent = carName;
+        document.getElementById("totalAmount").textContent = total;
+        document.getElementById("pickupDate").textContent = pickup;
+        document.getElementById("pickupLocation").textContent = pickupLocation;
+        document.getElementById("rentalDuration").textContent = rentalDuration;
+    </script>
+
+</body>
+</html>

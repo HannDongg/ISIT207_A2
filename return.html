@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AZoom Electric Car Rental - Return Vehicle</title>
+    <link rel="stylesheet" href="return.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="header-btn">
+            <a href="index2.html" class="sign-in">Home</a>
+        </div>
+    </header>
+
+    <section class="return-vehicle" id="return-vehicle">
+        <div class="heading">
+            <span>Return Vehicle Form</span>
+        </div>
+        <div class="return-form">
+            <label for="reservation-car">Reservation car:</label>
+            <input type="text" id="reservation-car" name="reservation-car" required>
+
+            <label for="return-location">Return Location:</label>
+            <input type="text" id="return-location" name="return-location" required>
+
+            <label for="return-date">Return Date:</label>
+            <input type="date" id="return-date" name="return-date" required>
+
+            <label for="damage-report">Damage Report:</label>
+            <textarea id="damage-report" name="damage-report" rows="4" cols="50"
+                placeholder="Please describe any damages to the vehicle, if applicable."></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </section>
+
+    <div class="popup" id="popup">
+        <div class="popup-content" id="popup-content"></div>
+        <button class="close-btn" id="close-btn">&times;</button>
+    </div>
+
+    <section class="footer">
+        <div class="footer-container container">
+            <div class="footer-box">
+                <a href="#" class="logo"><span>AZoom</span></a>
+                <div class="social">
+                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Page</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Ride</a>
+                <a href="#">Services</a>
+                <a href="#">Reviews</a>
+            </div>
+            <div class="footer-box">
+                <h3>Legal</h3>
+                <a href="#">Privacy</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <a href="index2.html#locate">Ubi</a>
+                <a href="index2.html#locate">Woodlands</a>
+                <a href="index2.html#locate">Hougang</a>
+                <a href="index2.html#locate">Commonwealth</a>
+            </div>
+            <div class="footer-box">
+                <p>&#169; AZoom All Right Reserved</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+
+<script>
+// JavaScript for displaying an alert with the form data after clicking Submit button
+const reservationCarTextbox = document.getElementById("reservation-car");
+const returnLocationTextbox = document.getElementById("return-location");
+const returnDateTextbox = document.getElementById("return-date");
+const damageReportTextbox = document.getElementById("damage-report");
+const submitButton = document.querySelector(".btn");
+
+submitButton.addEventListener("click", () => {
+    const reservationCar = reservationCarTextbox.value;
+    const returnLocation = returnLocationTextbox.value;
+    const returnDate = returnDateTextbox.value;
+    const damageReport = damageReportTextbox.value || "NA"; // Use "NA" if damage report is empty
+    
+    if (reservationCar.trim() !== "" && returnLocation.trim() !== "" && returnDate.trim() !== "") {
+        let alertMessage = `Reservation Car: ${reservationCar}\n`;
+        alertMessage += `Return Location: ${returnLocation}\n`;
+        alertMessage += `Return Date: ${returnDate}\n`;
+        alertMessage += `Damage Report: ${damageReport}\n\n`;
+        alertMessage += "Final bill and additional damage, if any, will be billed to your billing address.";
+        alert(alertMessage);
+        
+        // Redirect to index2.html after displaying the alert
+        window.location.href = "index2.html";
+    } else {
+        alert("Please fill out all fields.");
+    }
+});
+
+
+</script>
+
+</html>

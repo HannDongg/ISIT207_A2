@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+.booking-details {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.booking-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2d056d;
+}
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.details-container div {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #2d056d;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.return-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-link a {
+    text-decoration: none;
+    color: #2d056d;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.return-link a:hover {
+    text-decoration: underline;
+}

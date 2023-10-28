@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Website</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+</head>
+<body>
+
+
+    <section class="checkout" id="checkout">
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Website</title>
+    <link rel="stylesheet" href="checkout_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="index2.html#home" class="logo">
+            <img src="img/logo.jpg" alt="">
+        </a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="index2.html#home">Home</a></li>
+            <li><a href="index2.html#about">About</a></li>
+            <li><a href="index2.html#ride">Rent</a></li>
+            <li><a href="index2.html#services">Cars</a></li>
+            <li><a href="index2.html#reviews">Reviews</a></li>
+            <li><a href="index2.html#locate">Locations</a></li>
+        </ul>
+
+        <div class="header-btn">
+            <a href="index.html" class="logout">Log Out</a>
+            <a href="index2.html" class="sign-in">Joseph Low</a>
+        </div>
+
+    </header>
+
+    <section class="checkout" id="checkout">
+        <table>
+            <tr>
+                <th>Car</th>
+                <th>Days</th>
+                <th>Weeks</th>
+                <th>Months</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="car-info">
+                        <img id="car-image" src="" alt="Car Image" />
+                        <div>
+                            <p id="car-name"></p>
+                            <span>Daily: <span id="dailyRate">0.00</span><br />
+                            Weekly: <span id="weeklyRate">0.00</span><br />
+                            Monthly: <span id="monthlyRate">0.00</span></span><br /><br />
+
+                            <span>Car Model:</span>
+                            <select name="car" id="car">
+                                <option value="Nissan LEAF">Nissan LEAF</option>
+                                <option value="Honda E">Honda E</option>
+                                <option value="Mercedes-Benz EQS">Mercedes-Benz EQS</option>
+                                <option value="Kia EV6">Kia EV6</option>
+                                <option value="Porsche Taycan">Porsche Taycan</option>
+                                <option value="Volvo c40">Volvo c40</option>
+                                <option value="Mercedes-Benz EQV">Mercedes-Benz EQV</option>
+                            </select>
+                            <br /><br />
+                            <span>Pick-Up Date</span>
+                            <input type="date" name="pickup" id="pickup" />
+                            <br /><br />
+                            <span>Location:</span>
+                            <select name="location" id="location">
+                                <option value="Ubi">Ubi</option>
+                                <option value="Woodlands">Woodlands</option>
+                                <option value="Hougang">Hougang</option>
+                                <option value="Commonwealth">Commonwealth</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <input type="number" value="0" id="days" min="0" oninput="updatePrice()" />
+                </td>
+                <td>
+                    <input type="number" value="0" id="weeks" min="0" oninput="updatePrice()" />
+                </td>
+                <td>
+                    <input type="number" value="0" id="months" min="0" oninput="updatePrice()" />
+                </td>
+            </tr>
+        </table>
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$<span id="subtotal"></span></td>
+                </tr>
+                <tr>
+                    <td>GST</td>
+                    <td>$<span id="gst"></span></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$<span id="total" class= "price"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="#" id="paymentBtn" class="btn">Payment</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        const carData = {
+            "Nissan LEAF": { dailyRate: 80 },
+            "Honda E": { dailyRate: 155 },
+            "Porsche Taycan": { dailyRate: 300 },
+            "Mercedes-Benz EQS": { dailyRate: 250 },
+            "Kia EV6": { dailyRate: 170 },
+            "Volvo c40": { dailyRate: 200 },
+            "BMW iX3": { dailyRate: 200 },
+            "Mercedes-Benz EQV": { dailyRate: 250 },
+        };
+
+        const carImageURLs = {
+            "Nissan LEAF": "img/nissan.png",
+            "Honda E": "img/honda.png",
+            "Porsche Taycan": "img/porsche.jpg",
+            "Mercedes-Benz EQS": "img/Mercedes-Benz1.jpg",
+            "Kia EV6": "img/kia.jpg",
+            "Volvo c40": "img/volvo.png",
+            "BMW iX3": "img/bmw.png",
+            "Mercedes-Benz EQV": "img/Mercedes-Benz2.png",
+        };
+
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const carImageURL = getQueryParam("carImage");
+        const carName = getQueryParam("car");
+
+        const carImageElement = document.querySelector("#car-image");
+        if (carImageURL) {
+            carImageElement.src = carImageURL;
+        }
+
+        const carNameElement = document.querySelector("#car-name");
+        if (carName) {
+            carNameElement.textContent = carName;
+        }
+
+        const carDropdown = document.getElementById("car");
+        if (carName) {
+            carDropdown.value = carName;
+        }
+
+        function updatePrice() {
+            const selectedCar = document.getElementById("car").value;
+
+            const daysInput = document.getElementById("days");
+            const weeksInput = document.getElementById("weeks");
+            const monthsInput = document.getElementById("months");
+
+            const days = parseInt(daysInput.value) || 0;
+            const weeks = parseInt(weeksInput.value) || 0;
+            const months = parseInt(monthsInput.value) || 0;
+
+            const carInfo = carData[selectedCar];
+
+            if (!carInfo) {
+                return;
+            }
+
+            const carImageElement = document.getElementById("car-image");
+            if (carImageURLs[selectedCar]) {
+                carImageElement.src = carImageURLs[selectedCar];
+            }
+            document.getElementById("car-name").textContent = selectedCar;
+
+            const dailyRate = carInfo.dailyRate;
+            const weeklyRate = 6 * dailyRate;
+            const monthlyRate = 27 * dailyRate;
+            const subtotal = days * dailyRate + weeks * weeklyRate + months * monthlyRate;
+
+            const gstRate = 0.08;
+            const gst = subtotal * gstRate;
+            const total = subtotal + gst;
+
+            document.getElementById("dailyRate").textContent = `$${dailyRate.toFixed(2)}`;
+            document.getElementById("weeklyRate").textContent = `$${(6 * dailyRate).toFixed(2)}`;
+            document.getElementById("monthlyRate").textContent = `$${(27 * dailyRate).toFixed(2)}`;
+            document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById("gst").textContent = `$${gst.toFixed(2)}`;
+            document.getElementById("total").textContent = `$${total.toFixed(2)}`;
+        }
+
+        document.getElementById("car").addEventListener("change", updatePrice);
+        document.getElementById("days").addEventListener("input", updatePrice);
+        document.getElementById("weeks").addEventListener("input", updatePrice);
+        document.getElementById("months").addEventListener("input", updatePrice);
+
+        updatePrice();
+
+        document.querySelector("#paymentBtn").addEventListener("click", function () {
+            const carName = document.querySelector("#car-name").textContent;
+            const total = document.querySelector("#total").textContent;
+            const pickup = document.querySelector("#pickup").value;
+            const location = document.querySelector("#location").value;
+            const days = parseInt(document.querySelector("#days").value) || 0;
+            const weeks = parseInt(document.querySelector("#weeks").value) || 0;
+            const months = parseInt(document.querySelector("#months").value) || 0;
+
+            const carNameParam = encodeURIComponent(carName);
+            const totalParam = encodeURIComponent(total);
+            const pickupParam = encodeURIComponent(pickup);
+            const locationParam = encodeURIComponent(location);
+            const daysParam = encodeURIComponent(days);
+            const weeksParam = encodeURIComponent(weeks);
+            const monthsParam = encodeURIComponent(months);
+
+            const paymentUrl = `payment.html?carName=${carNameParam}&total=${totalParam}&pickup=${pickupParam}&location=${locationParam}&days=${daysParam}&weeks=${weeksParam}&months=${monthsParam}`;
+
+            window.location.href = paymentUrl;
+        });
+
+        
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>
